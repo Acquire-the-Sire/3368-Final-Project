@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+</head>
+<!---->
+
+<body>
+<main>
+    <div class="container, form-check">
+        <form action="/crud" method="post">
+            <input class="form-check-input" type="radio" id="create" name="resident" value="create">
+            <label class="form-check-label" for="create">Create Resident</label><br>
+            <input class="form-check-input" type="radio" id="read" name="resident" value="read">
+            <label class="form-check-label" for="read">Retrieve Resident</label><br>
+            <input class="form-check-input" type="radio" id="update" name="resident" value="update">
+            <label class="form-check-label" for="update">Change Resident Age</label><br>
+            <input class="form-check-input" type="radio" id="delete" name="resident" value="delete">
+            <label class="form-check-label" for="delete">Delete Resident</label><br>
+            <input type="text" id="fname" name="firstname" placeholder="First Name">
+            <input type="text" id="lname" name="lastname" placeholder="Last Name">
+            <input type="text" id="age" name="age" placeholder="Age">
+            <label for="room">Room Number:</label>
+            <select id="room" name="room">
+                <% let rlen = locals.roomnum.length;%>
+                <% for (let i = 0; i < rlen; ++i) {%>
+                <option value="<%= locals.roomnum[i].number%>"><%= locals.roomnum[i].number%></option>
+                <%}%>
+            </select>
+            <input type="submit">
+        </form>
+    </div>
+</main>
+
+
+
+</body>
+</html>
