@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { padding-top:50px; }
+    </style>
+</head>
+<!---->
+
+<body>
+<main>
+    <!-- ejs code pulled from class 9 template -->
+        <% if (locals.auth) { %>
+        <div class="container, form-check">
+            <form  action="/redirect" method="post">
+                <input class="form-check-input" type="radio" id="floor" name="table" value="floor">
+                <label class="form-check-label" for="floor">Edit Floor</label><br>
+                <input class="form-check-input" type="radio" id="resident" name="table" value="resident">
+                <label class="form-check-label" for="resident">Edit Resident</label><br>
+                <input class="form-check-input" type="radio" id="room" name="table" value="room">
+                <label class="form-check-label" for="room">Edit Room</label><br>
+                <input type="submit" value="Move to table">
+            </form>
+        </div>
+        <% } %>
+        <% if (!locals.auth) { %>
+            YOU ARE NOT AUTHORIZED
+         <% } %>
+
+</main>
+
+
+
+</body>
+</html>

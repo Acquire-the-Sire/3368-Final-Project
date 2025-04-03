@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { padding-top:50px; }
+        form { padding-left: 50px; }
+    </style>
+</head>
+<!---->
+
+<body>
+<main>
+    <div class="container, form-check">
+        <form action="/crud" method="post">
+            <input class="form-check-input" type="radio" id="create" name="floor" value="create">
+            <label class="form-check-label" for="create">Create Floor</label><br>
+            <input class="form-check-input" type="radio" id="read" name="floor" value="read">
+            <label class="form-check-label" for="read">Retrieve Floor</label><br>
+            <input class="form-check-input" type="radio" id="update" name="floor" value="update">
+            <label class="form-check-label" for="update">Change Floor Name</label><br>
+            <input class="form-check-input" type="radio" id="delete" name="floor" value="delete">
+            <label class="form-check-label" for="delete">Delete Floor</label><br>
+            <input type="text" id="name" name="name" placeholder="Floor Name">
+            <input type="text" id="level" name="level" placeholder="Floor Level">
+            <input type="submit">
+        </form>
+    </div>
+</main>
+
+
+
+</body>
+</html>
